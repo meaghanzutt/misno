@@ -42,3 +42,16 @@ npm run preview
 
 ## Important
 The UI is a Sprint 1 foundation. Authentication authorization, payments, data persistence, production moderation, and live video are intentionally not implemented yet.
+
+## Netlify TypeScript build fix
+
+This package includes the following corrections for Netlify builds:
+
+- Local TypeScript declaration for `netlify-identity-widget` at `src/types/netlify-identity-widget.d.ts`.
+- Vite environment typings enabled through `types: ["vite/client"]` in `tsconfig.app.json`.
+- `noEmit: true` added to `tsconfig.node.json` so Vite handles output.
+
+Netlify settings:
+
+- Build command: `npm run build`
+- Publish directory: `dist`
