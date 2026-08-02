@@ -42,6 +42,7 @@ export default function App(){return <Routes>
   <Route path="/admin" element={<AdminLayout/>}>
     <Route index element={<AdminDashboardPage/>}/><Route path="members" element={<AdminListPage title="Members" items={['Meaghan Ö','Emily Ö','Kai Ö']}/>}/><Route path="reports" element={<AdminListPage title="Reports" items={['Reported comment','Event safety concern','Profile review']}/>}/><Route path="settings" element={<AdminListPage title="Settings" items={['Registration preferences','Community guidelines','Role permissions']}/>}/>
   </Route>
-  <Route path="/styleguide" element={<StyleGuidePage/>}/>
+  <Route path="/design-system" element={<StyleGuidePage/>}/>
+  <Route path="/styleguide" element={<Navigate to="/design-system" replace/>}/>
   <Route path="*" element={<Navigate to="/" replace/>}/>
 </Routes>}
