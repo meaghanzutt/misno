@@ -12,11 +12,12 @@ A clean, white, Netlify-ready MISNÖ website and community app.
 
 ## Netlify deployment
 
-1. Unzip the package.
-2. Create or open a Netlify site.
-3. Upload the folder contents with `index.html` at the root.
-4. Enable Netlify Identity in Project configuration.
-5. Use open registration while testing.
-6. Assign the `admin` role manually to administrator accounts.
+1. Create or open a Netlify site.
+2. Connect this repository.
+3. Enable Netlify Identity in Project configuration.
+4. Use open registration while testing.
+5. Assign the `admin` role manually to administrator accounts.
 
-No build command is required. Publish directory: `.`
+Build command: `npm run build`
+
+Publish directory: `dist`
