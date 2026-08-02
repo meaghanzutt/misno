@@ -3,31 +3,90 @@ import { Card } from './Card';
 import { Button } from './Button';
 import { openSignup } from '../lib/auth';
 
-interface Plan {
-  name: string; key: string; monthly: string; enrollment: string; description: string; features: readonly string[]; cta: string; badge?: string;
+export interface MembershipPlan {
+  name: string;
+  key: string;
+  monthly: string;
+  enrollment: string;
+  bestFor: string;
+  description: string;
+  features: readonly string[];
+  cta: string;
+  badge?: string;
 }
 
-export function MembershipCard({ plan, wide = false }: { plan: Plan; wide?: boolean }) {
+export function MembershipCard({
+  plan,
+  featured = false,
+  className = '',
+}: {
+  plan: MembershipPlan;
+  featured?: boolean;
+  className?: string;
+}) {
   const selectPlan = () => {
     localStorage.setItem('misno-selected-plan', plan.key);
     openSignup();
   };
+
   return (
-    <Card className={`flex h-full flex-col p-7 sm:p-8 ${wide ? 'md:grid md:grid-cols-[1fr_1.2fr] md:gap-12' : ''}`}>
-      <div>
-        <div className="flex items-center justify-between gap-4">
-          <h3 className="text-xl font-semibold">{plan.name}</h3>
-          {plan.badge && <span className="rounded-full border border-border px-3 py-1 text-xs font-semibold text-forest">{plan.badge}</span>}
-        </div>
-        <div className="mt-6 text-4xl font-semibold tracking-tight">{plan.monthly}</div>
-        <p className="mt-2 text-sm text-muted">{plan.enrollment}</p>
-        <p className="mt-6 body-muted">{plan.description}</p>
+    <Card
+      className={`membership-card group relative flex h-full flex-col overflow-hidden p-8 sm:p-10 ${
+        featured ? 'membership-card-featured' : ''
+      } ${className}`}
+    >
+      <div className="flex min-h-8 items-start justify-between gap-5">
+        <h3 className="text-2xl font-semibold tracking-[-0.025em] text-ink sm:text-[1.75rem]">
+          {plan.name}
+        </h3>
+        {plan.badge && (
+          <span className="shrink-0 rounded-full border border-forest/20 bg-forest/5 px-3 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-forest">
+            {plan.badge}
+          </span>
+        )}
       </div>
-      <div className="mt-8 flex flex-col md:mt-0">
-        <ul className="space-y-3 text-sm">
-          {plan.features.map((feature) => <li key={feature} className="flex gap-3"><Check className="mt-0.5 h-4 w-4 shrink-0 text-forest" />{feature}</li>)}
+
+      <div className="mt-7 border-b border-border pb-7">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Best for</p>
+        <p className="mt-2 text-base font-semibold leading-6 text-ink">{plan.bestFor}</p>
+        <p className="mt-4 min-h-[3.5rem] text-sm leading-6 text-muted sm:text-base">
+          {plan.description}
+        </p>
+      </div>
+
+      <div className="border-b border-border py-8">
+        <div className="flex flex-wrap items-end gap-x-2 gap-y-1">
+          <span className="text-5xl font-semibold tracking-[-0.055em] text-ink sm:text-6xl">
+            {plan.monthly}
+          </span>
+          {plan.monthly !== 'Free' && (
+            <span className="pb-1.5 text-base font-medium text-muted">/month</span>
+          )}
+        </div>
+        <p className="mt-4 text-sm leading-6 text-muted">{plan.enrollment}</p>
+      </div>
+
+      <div className="flex flex-1 flex-col pt-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-muted">Included</p>
+        <ul className="mt-5 space-y-4 text-sm leading-6 text-ink sm:text-[0.95rem]">
+          {plan.features.map((feature) => (
+            <li key={feature} className="flex gap-3.5">
+              <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-forest/[0.08]">
+                <Check className="h-3.5 w-3.5 text-forest" aria-hidden="true" />
+              </span>
+              <span>{feature}</span>
+            </li>
+          ))}
         </ul>
-        <Button onClick={selectPlan} className="mt-8 w-full md:mt-auto">{plan.cta}</Button>
+
+        <Button
+          onClick={selectPlan}
+          size="lg"
+          className="mt-10 min-h-14 w-full text-[0.95rem] sm:mt-12"
+          aria-label={`${plan.cta}: ${plan.name} membership`}
+        >
+          {plan.cta}
+        </Button>
       </div>
     </Card>
   );

@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.0.0-alpha.5
+
+### Fixed
+- Corrected Executive Partner enrollment to $600 while retaining the $100 monthly subscription.
+
+## 1.0.0-alpha.4
+
+### Added
+- Redesigned membership experience with spacious, equal-height cards.
+- “Best for” guidance and clearer enrollment-versus-monthly pricing hierarchy.
+- Dedicated 2–2–1 membership layout with a centered Executive Partner card.
+- Closing start-free call to action for visitors who are not ready to choose a paid tier.
+
+### Changed
+- Increased spacing between membership details, feature lists, and actions.
+- Made membership actions full-width and easier to scan.
+- Updated membership copy to reflect the approved MISNÖ tiers and benefits.
+
 ## 1.0.0-alpha.3
 
 ### Added
