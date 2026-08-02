@@ -249,3 +249,77 @@ button, a { -webkit-tap-highlight-color: transparent; }
     transform: none;
   }
 }
+
+@layer components {
+  .experience-detail-page {
+    @apply mx-auto w-full max-w-6xl pb-28;
+  }
+
+  .experience-back-link {
+    @apply inline-flex items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-4;
+  }
+
+  .experience-detail-header {
+    @apply mt-8 grid gap-8 border-b border-border pb-10 lg:grid-cols-[1fr_auto] lg:items-end;
+  }
+
+  .experience-detail-actions {
+    @apply hidden lg:block;
+  }
+
+  .experience-facts {
+    @apply grid border-b border-border py-7 sm:grid-cols-3;
+  }
+
+  .experience-facts > div {
+    @apply flex items-start gap-3 border-b border-border py-4 text-forest last:border-b-0 sm:border-b-0 sm:border-r sm:px-6 sm:first:pl-0 sm:last:border-r-0;
+  }
+
+  .experience-facts span {
+    @apply flex flex-col gap-1 text-sm text-muted;
+  }
+
+  .experience-facts strong {
+    @apply font-semibold text-ink;
+  }
+
+  .experience-detail-grid {
+    @apply mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px];
+  }
+
+  .experience-content-card {
+    @apply p-7 sm:p-9;
+  }
+
+  .experience-side-card {
+    @apply p-6;
+  }
+
+  .experience-check-list {
+    @apply grid gap-4 sm:grid-cols-2;
+  }
+
+  .experience-check-list li {
+    @apply flex items-start gap-3 rounded-2xl bg-surface p-4 text-sm leading-6 text-ink;
+  }
+
+  .experience-check-list svg {
+    @apply mt-1 shrink-0 text-forest;
+  }
+
+  .experience-tag {
+    @apply inline-flex rounded-full border border-border bg-white px-3.5 py-2 text-sm font-medium text-ink;
+  }
+
+  .experience-attendee {
+    @apply flex w-20 flex-col items-center gap-2 text-center text-xs;
+  }
+
+  .experience-joined-state {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-forest/20 bg-forest/10 px-5 py-3 text-sm font-semibold text-forest;
+  }
+
+  .experience-mobile-action {
+    @apply fixed inset-x-0 bottom-16 z-30 border-t border-border bg-white/95 p-4 backdrop-blur lg:hidden;
+  }
+}

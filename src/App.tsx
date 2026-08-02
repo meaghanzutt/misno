@@ -10,6 +10,7 @@ import { ContactPage } from './pages/public/ContactPage';
 import { LegalPage } from './pages/public/LegalPage';
 import { AppHomePage } from './pages/app/AppHomePage';
 import { DiscoverPage } from './pages/app/DiscoverPage';
+import { ExperienceDetailPage } from './pages/app/ExperienceDetailPage';
 import { MessagesPage } from './pages/app/MessagesPage';
 import { PassportPage } from './pages/app/PassportPage';
 import { ProfilePage } from './pages/app/ProfilePage';
@@ -30,7 +31,7 @@ export default function App(){return <Routes>
     <Route path="/terms" element={<LegalPage title="Terms of Use"/>}/>
   </Route>
   <Route path="/app" element={<AppLayout/>}>
-    <Route index element={<AppHomePage/>}/><Route path="discover" element={<DiscoverPage/>}/><Route path="messages" element={<MessagesPage/>}/><Route path="passport" element={<PassportPage/>}/><Route path="profile" element={<ProfilePage/>}/>
+    <Route index element={<AppHomePage/>}/><Route path="discover" element={<DiscoverPage/>}/><Route path="experiences/:experienceId" element={<ExperienceDetailPage/>}/><Route path="messages" element={<MessagesPage/>}/><Route path="passport" element={<PassportPage/>}/><Route path="profile" element={<ProfilePage/>}/>
   </Route>
   <Route path="/workspace" element={<WorkspaceLayout/>}>
     <Route index element={<WorkspaceOverviewPage/>}/>
