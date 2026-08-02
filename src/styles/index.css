@@ -112,25 +112,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 @layer components {
-  .hero-photo-frame {
-    @apply relative min-h-[420px] overflow-hidden rounded-[24px] border border-border bg-surface shadow-soft sm:min-h-[520px];
+  .hero-community-preview {
+    @apply rounded-[24px] border border-border bg-white p-6 shadow-soft sm:p-8;
   }
 
-  .hero-photo-caption {
-    @apply absolute bottom-4 left-4 right-4 rounded-2xl border border-white/70 bg-white/95 p-5 shadow-soft backdrop-blur sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-sm;
-  }
-
-  .community-gallery-card {
-    @apply relative overflow-hidden rounded-card border border-border bg-white shadow-soft;
-  }
-
-  .community-gallery-card::after {
-    content: '';
-    @apply absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent;
-  }
-
-  .community-gallery-card figcaption {
-    @apply absolute bottom-0 left-0 z-10 p-5 text-sm font-semibold text-white;
+  .community-action-card {
+    @apply min-h-[300px] rounded-card border border-border bg-white p-7 shadow-soft;
   }
 
   .value-block {
@@ -138,8 +125,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
   }
 
   .experience-card {
-    @apply flex h-full flex-col;
+    @apply flex h-full flex-col overflow-hidden;
     transition: transform var(--motion-standard) ease, box-shadow var(--motion-standard) ease;
+  }
+
+  .experience-card-header {
+    @apply flex items-start justify-between border-b border-border bg-surface p-7;
   }
 
   .experience-card:hover {

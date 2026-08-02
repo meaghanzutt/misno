@@ -1,3 +1,10 @@
+## 1.0.0-alpha.7
+
+- Removed homepage stock photography and external image dependencies.
+- Replaced the hero photo with a clean community activity preview.
+- Rebuilt Community in Action as typography-led feature cards.
+- Redesigned Experience cards with icons, clearer metadata, and white-first styling.
+
 # Changelog
 
 ## 1.0.0-alpha.6 — Homepage story experience
