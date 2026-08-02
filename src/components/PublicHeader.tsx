@@ -5,7 +5,7 @@ import { Brand } from './Brand';
 import { Button } from './Button';
 import { openLogin, openSignup } from '../lib/auth';
 
-const links = [['Discover', '/#experiences'], ['Memberships', '/memberships'], ['About', '/about']];
+const links = [['Experiences', '/#experiences'], ['Memberships', '/memberships'], ['About', '/about']];
 
 export function PublicHeader() {
   const [open, setOpen] = useState(false);

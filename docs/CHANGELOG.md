@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0-alpha.6 — Homepage story experience
+
+- Rebuilt the homepage around the Misfits & Nomads brand story.
+- Added a lifestyle-led hero, community gallery, values, featured experiences, membership journey, Founding Members invitation, and final call to action.
+- Expanded Experience cards with imagery, host information, schedule, location, and member count.
+- Preserved the clean white design with restrained warm-neutral accents.
+
 ## 1.0.0-alpha.5
 
 ### Fixed

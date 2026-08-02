@@ -1,43 +1,25 @@
-import { ArrowRight, MapPin, Users } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button, ButtonLink } from '../../components/Button';
 import { openSignup } from '../../lib/auth';
-
-const previewItems = [
-  {
-    title: 'Coffee Passport',
-    meta: 'North Park · Saturday, 10:00 AM',
-    members: '24 people',
-  },
-  {
-    title: 'Sunrise Club',
-    meta: 'Mission Bay · Sunday, 6:30 AM',
-    members: '18 people',
-  },
-  {
-    title: 'Weekend Adventures',
-    meta: 'San Diego · Twice monthly',
-    members: '42 people',
-  },
-] as const;
 
 export function Hero() {
   return (
     <section className="hero-section overflow-hidden" aria-labelledby="home-hero-title">
-      <div className="page-container grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.08fr_.92fr] lg:gap-16 lg:py-28">
+      <div className="page-container grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.02fr_.98fr] lg:gap-20 lg:py-28">
         <div className="hero-reveal max-w-3xl">
-          <p className="eyebrow">Real people. Meaningful experiences.</p>
+          <p className="eyebrow">Misfits &amp; Nomads</p>
           <h1 id="home-hero-title" className="hero-title mt-5">
-            Community shouldn’t be hard to find.
+            Not everyone fits in. <span className="text-forest">That’s the point.</span>
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
-            Discover meaningful experiences, meet people who share your interests, and build genuine communities online and in person.
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-muted sm:text-xl sm:leading-9">
+            A creative community for people who think differently, build boldly, and believe the best experiences are shared.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button size="lg" onClick={openSignup} className="w-full sm:w-auto">
-              Join free
+              Join the community
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Button>
-            <ButtonLink to="/app/discover" variant="secondary" size="lg" className="w-full sm:w-auto">
+            <ButtonLink to="/#experiences" variant="secondary" size="lg" className="w-full sm:w-auto">
               Explore experiences
             </ButtonLink>
           </div>
@@ -46,42 +28,18 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="hero-reveal hero-reveal-delay" aria-label="Featured MISNÖ experiences">
-          <div className="rounded-[24px] border border-border bg-white p-4 shadow-soft sm:p-6">
-            <div className="flex items-center justify-between gap-4 border-b border-border pb-5">
-              <div>
-                <p className="text-sm font-semibold text-ink">Happening soon</p>
-                <p className="mt-1 text-sm text-muted">A simple glimpse of the community.</p>
-              </div>
-              <span className="inline-flex rounded-full bg-forest/10 px-3 py-1 text-xs font-semibold text-forest">
-                San Diego
-              </span>
+        <div className="hero-reveal hero-reveal-delay">
+          <div className="hero-photo-frame">
+            <img
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=82"
+              alt="A small group gathering around a table and sharing ideas"
+              className="h-full w-full object-cover"
+              fetchPriority="high"
+            />
+            <div className="hero-photo-caption">
+              <p className="text-sm font-semibold text-ink">Built around real moments.</p>
+              <p className="mt-1 text-sm leading-6 text-muted">Coffee, conversations, creative work, and experiences worth showing up for.</p>
             </div>
-
-            <div className="divide-y divide-border">
-              {previewItems.map((item) => (
-                <div key={item.title} className="group grid gap-3 py-5 sm:grid-cols-[1fr_auto] sm:items-center">
-                  <div>
-                    <h2 className="text-base font-semibold tracking-[-0.01em] text-ink transition group-hover:text-forest">
-                      {item.title}
-                    </h2>
-                    <p className="mt-2 flex items-center gap-2 text-sm text-muted">
-                      <MapPin className="h-4 w-4 shrink-0" aria-hidden="true" />
-                      {item.meta}
-                    </p>
-                  </div>
-                  <p className="flex items-center gap-2 text-sm font-medium text-muted">
-                    <Users className="h-4 w-4" aria-hidden="true" />
-                    {item.members}
-                  </p>
-                </div>
-              ))}
-            </div>
-
-            <ButtonLink to="/app/discover" variant="ghost" className="mt-1 w-full justify-between border-t border-border pt-5">
-              See what’s happening
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </ButtonLink>
           </div>
         </div>
       </div>

@@ -1,9 +1,42 @@
 import type { Experience, Person } from '../types';
 
 export const experiences: Experience[] = [
-  { id: 'coffee-passport', title: 'Coffee Passport', location: 'San Diego', schedule: 'Saturdays', description: 'Try neighborhood cafés with a small group and keep a shared list of favorites.', members: 48, category: 'Food & coffee' },
-  { id: 'sunrise-club', title: 'Sunrise Club', location: 'Mission Bay', schedule: 'Twice monthly', description: 'Easy morning walks, good conversation, and no performance pressure.', members: 31, category: 'Outdoors' },
-  { id: 'book-journey', title: 'Book Journey', location: 'Online', schedule: 'Monthly', description: 'A relaxed reading circle built around one thoughtful conversation each month.', members: 76, category: 'Books' },
+  {
+    id: 'coffee-passport',
+    title: 'Coffee Passport',
+    location: 'North Park, San Diego',
+    schedule: 'Saturday · 10:00 AM',
+    description: 'Explore a different local café each month while meeting people who enjoy an easy conversation.',
+    members: 48,
+    category: 'Food & coffee',
+    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1200&q=80',
+    host: 'Sarah',
+    hostMembership: 'contributor',
+  },
+  {
+    id: 'sunrise-club',
+    title: 'Sunrise Club',
+    location: 'Mission Bay, San Diego',
+    schedule: 'Sunday · 6:30 AM',
+    description: 'Start the morning with a relaxed walk, thoughtful conversation, and no performance pressure.',
+    members: 31,
+    category: 'Outdoors',
+    image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
+    host: 'Keoni',
+    hostMembership: 'partner',
+  },
+  {
+    id: 'weekend-adventures',
+    title: 'Weekend Adventures',
+    location: 'San Diego County',
+    schedule: 'Twice monthly',
+    description: 'Try something new with a small group, from neighborhood walks to low-key day trips.',
+    members: 42,
+    category: 'Adventure',
+    image: 'https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=1200&q=80',
+    host: 'Mia',
+    hostMembership: 'member',
+  },
 ];
 
 export const people: Person[] = [

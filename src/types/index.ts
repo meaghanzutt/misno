@@ -17,4 +17,7 @@ export interface Experience {
   description: string;
   members: number;
   category: string;
+  image: string;
+  host: string;
+  hostMembership: Membership;
 }

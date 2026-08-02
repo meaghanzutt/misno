@@ -110,3 +110,72 @@ button, a { -webkit-tap-highlight-color: transparent; }
     transform: none;
   }
 }
+
+@layer components {
+  .hero-photo-frame {
+    @apply relative min-h-[420px] overflow-hidden rounded-[24px] border border-border bg-surface shadow-soft sm:min-h-[520px];
+  }
+
+  .hero-photo-caption {
+    @apply absolute bottom-4 left-4 right-4 rounded-2xl border border-white/70 bg-white/95 p-5 shadow-soft backdrop-blur sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-sm;
+  }
+
+  .community-gallery-card {
+    @apply relative overflow-hidden rounded-card border border-border bg-white shadow-soft;
+  }
+
+  .community-gallery-card::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent;
+  }
+
+  .community-gallery-card figcaption {
+    @apply absolute bottom-0 left-0 z-10 p-5 text-sm font-semibold text-white;
+  }
+
+  .value-block {
+    @apply border-t border-border pt-7;
+  }
+
+  .experience-card {
+    @apply group flex h-full flex-col;
+    transition: transform var(--motion-standard) ease, box-shadow var(--motion-standard) ease;
+  }
+
+  .experience-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.07);
+  }
+
+  .membership-journey {
+    @apply grid gap-3 lg:grid-cols-5;
+  }
+
+  .membership-journey-item {
+    @apply relative flex items-center justify-between rounded-card border border-border bg-white px-5 py-5 shadow-soft;
+  }
+
+  .membership-journey-arrow {
+    @apply hidden lg:block;
+    position: absolute;
+    right: -14px;
+    z-index: 2;
+    background: white;
+    border-radius: 999px;
+    padding: 2px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .bg-warm {
+    background: #faf8f4;
+  }
+
+  .founding-panel {
+    @apply flex flex-col gap-8 rounded-[24px] border border-border bg-white p-7 shadow-soft sm:p-10 lg:flex-row lg:items-center lg:justify-between lg:p-12;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-card:hover { transform: none; }
+}
