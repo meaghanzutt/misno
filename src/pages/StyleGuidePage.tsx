@@ -1,4 +1,4 @@
-import { Bell, Compass, Inbox, Plus, Search, Sparkles, Users } from 'lucide-react';
+import { Bell, Compass, Inbox, MoreHorizontal, Plus, Search, Sparkles, Users } from 'lucide-react';
 import { useState } from 'react';
 import { Avatar } from '../components/Avatar';
 import { Badge } from '../components/Badge';
@@ -14,6 +14,8 @@ import { Modal } from '../components/Modal';
 import { ProfileCard } from '../components/ProfileCard';
 import { TabPanel, Tabs } from '../components/Tabs';
 import { experiences, memberships } from '../lib/data';
+import { Container, Divider, IconButton, PageHeader, Section } from '../design';
+import { colors, motion, radius, shadows, spacing, typography } from '../design/tokens';
 
 const navigation = [
   ['Foundations', '#foundations'],
@@ -30,13 +32,13 @@ export function StyleGuidePage() {
   return (
     <div className="min-h-screen bg-white">
       <header className="sticky top-0 z-30 border-b border-border bg-white/95 backdrop-blur">
-        <div className="page-container flex min-h-18 items-center justify-between gap-5 py-4">
+        <Container className="flex min-h-18 items-center justify-between gap-5 py-4">
           <div className="flex items-center gap-5"><Brand /><Badge tone="accent">Design System</Badge></div>
           <ButtonLink to="/" variant="secondary" size="sm">Back to website</ButtonLink>
-        </div>
+        </Container>
       </header>
 
-      <div className="page-container grid gap-12 py-12 lg:grid-cols-[210px_minmax(0,1fr)] lg:py-16">
+      <Container className="grid gap-12 py-12 lg:grid-cols-[210px_minmax(0,1fr)] lg:py-16">
         <aside className="hidden lg:block">
           <nav className="sticky top-28 space-y-1" aria-label="Design system sections">
             {navigation.map(([label, href]) => <a key={href} href={href} className="block rounded-xl px-3 py-2.5 text-sm font-medium text-muted hover:bg-surface hover:text-ink">{label}</a>)}
@@ -44,9 +46,11 @@ export function StyleGuidePage() {
         </aside>
 
         <main className="min-w-0">
-          <p className="eyebrow">Internal reference</p>
-          <h1 className="display-title mt-4">MISNÖ Design System</h1>
-          <p className="mt-5 max-w-2xl body-muted">A calm, white-first system for the public website, Community, Workspace, and Admin. Components are accessible, responsive, and intentionally restrained.</p>
+          <PageHeader
+            eyebrow="Internal reference"
+            title="MISNÖ Design System"
+            description="A calm, white-first system for the public website, Community, Workspace, and Admin. Components are accessible, responsive, and intentionally restrained."
+          />
 
           <section id="foundations" className="scroll-mt-28 pt-20 first:pt-14">
             <SectionHeading eyebrow="Foundations" title="Visual language" description="The shared tokens that keep every MISNÖ screen consistent." />
@@ -89,6 +93,26 @@ export function StyleGuidePage() {
                 </div>
               </Card>
             </div>
+
+            <Card className="mt-6 p-7 sm:p-8">
+              <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="eyebrow">Typed tokens</p>
+                  <h3 className="mt-3 text-lg font-semibold">One source for coded decisions</h3>
+                  <p className="mt-2 body-muted">Use TypeScript tokens for JavaScript-driven interfaces and CSS variables for global and Tailwind styling.</p>
+                </div>
+                <IconButton label="More token options"><MoreHorizontal className="h-5 w-5" /></IconButton>
+              </div>
+              <Divider className="my-7" />
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <TokenRow name="Forest" value={colors.forest} />
+                <TokenRow name="Section spacing" value={`${spacing[16]}px`} />
+                <TokenRow name="Card radius" value={`${radius.card}px`} />
+                <TokenRow name="Soft shadow" value={shadows.soft} />
+                <TokenRow name="Standard motion" value={`${motion.standard}ms`} />
+                <TokenRow name="Body size" value={`${typography.body.fontSize}px`} />
+              </div>
+            </Card>
           </section>
 
           <section id="components" className="scroll-mt-28 pt-20">
@@ -135,6 +159,24 @@ export function StyleGuidePage() {
             <div className="mt-6"><h3 className="mb-4 text-lg font-semibold">Membership card</h3><MembershipCard plan={memberships[2]} /></div>
           </section>
 
+          <Section className="-mx-5 mt-20 rounded-[24px] px-5 sm:-mx-8 sm:px-8 lg:-mx-10 lg:px-10" tone="soft">
+            <SectionHeading eyebrow="Layout primitives" title="Consistent page rhythm" description="Container, Section, and PageHeader keep feature pages aligned without repeating layout decisions." />
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+              <Card className="p-7 sm:p-8">
+                <PageHeader eyebrow="Example" title="Explore what is happening" description="Page headers keep one clear message and one optional primary action." action={<Button>Primary action</Button>} />
+              </Card>
+              <Card className="p-7 sm:p-8">
+                <h3 className="text-lg font-semibold">Primitive rules</h3>
+                <ul className="mt-5 space-y-3 text-sm text-muted">
+                  <li>Container owns page width and responsive gutters.</li>
+                  <li>Section owns vertical spacing and background tone.</li>
+                  <li>PageHeader owns title hierarchy and primary action placement.</li>
+                  <li>Divider separates content only when spacing is not enough.</li>
+                </ul>
+              </Card>
+            </div>
+          </Section>
+
           <section id="forms" className="scroll-mt-28 pt-20">
             <SectionHeading eyebrow="Forms" title="Clear, forgiving inputs" description="Labels stay visible, errors are explicit, and focus states are easy to find." />
             <Card className="mt-8 grid gap-6 p-7 sm:p-8 md:grid-cols-2">
@@ -178,7 +220,7 @@ export function StyleGuidePage() {
             </div>
           </section>
         </main>
-      </div>
+      </Container>
 
       <Modal open={modalOpen} onClose={() => setModalOpen(false)} title="Join this experience?" description="You can leave at any time. Your participation will appear in your Passport.">
         <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end"><Button variant="secondary" onClick={() => setModalOpen(false)}>Cancel</Button><Button onClick={() => setModalOpen(false)}>Join experience</Button></div>

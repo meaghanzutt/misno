@@ -55,3 +55,7 @@ Netlify settings:
 
 - Build command: `npm run build`
 - Publish directory: `dist`
+
+## Design Kit
+
+The coded design foundation lives in `src/design`. Visit `/design-system` to review tokens, components, patterns, and templates. Reusable UI is available through `src/components/ui`.

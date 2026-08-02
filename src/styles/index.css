@@ -11,6 +11,9 @@
   --color-muted: #6b7280;
   --color-border: #e5e7eb;
   --color-accent: #2f5d50;
+  --color-success: #15803d;
+  --color-warning: #b45309;
+  --color-danger: #b91c1c;
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -22,7 +25,9 @@
   --space-24: 96px;
   --radius-control: 12px;
   --radius-card: 16px;
+  --radius-panel: 24px;
   --shadow-soft: 0 8px 24px rgba(0,0,0,.05);
+  --shadow-lifted: 0 18px 40px rgba(0,0,0,.075);
   --motion-fast: 150ms;
   --motion-standard: 200ms;
 }

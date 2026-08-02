@@ -60,3 +60,10 @@
 ### Changed
 - `/styleguide` now redirects to `/design-system`.
 - Community search now uses the shared search component.
+
+## 1.0.0-alpha.8
+
+- Added the typed MISNÖ Design Kit token library.
+- Added Container, Section, PageHeader, Divider, and IconButton primitives.
+- Added a stable UI component export path.
+- Added Design Kit documentation and expanded semantic CSS variables.
