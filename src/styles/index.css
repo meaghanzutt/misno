@@ -51,3 +51,35 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .section-title { @apply text-2xl font-semibold tracking-[-0.025em] sm:text-3xl; }
   .body-muted { @apply text-base leading-7 text-muted; }
 }
+
+@layer components {
+  .hero-section {
+    background:
+      radial-gradient(circle at 85% 12%, rgba(47, 93, 80, 0.055), transparent 30%),
+      #ffffff;
+  }
+
+  .hero-title {
+    @apply max-w-4xl text-[2.75rem] font-semibold leading-[1.02] tracking-[-0.055em] text-ink sm:text-6xl lg:text-7xl;
+  }
+}
+
+@keyframes hero-reveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-reveal {
+  animation: hero-reveal 520ms ease-out both;
+}
+
+.hero-reveal-delay {
+  animation-delay: 90ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-reveal,
+  .hero-reveal-delay {
+    animation: none;
+  }
+}

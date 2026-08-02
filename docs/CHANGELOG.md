@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.0-alpha.3
+
+### Added
+- Reusable homepage `Hero` component with accessible heading and CTA structure.
+- Responsive featured-experience preview for the public landing page.
+- Subtle entrance motion with reduced-motion support.
+
+### Changed
+- Replaced the previous dashboard-style hero with a calmer, story-first public introduction.
+
 ## 1.0.0-alpha.1
 - Created React + Vite + TypeScript foundation.
 - Added Tailwind design tokens and shared components.

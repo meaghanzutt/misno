@@ -9,7 +9,7 @@ A clean React + Vite + TypeScript foundation for the MISNÖ community platform.
 - Community app shell
 - Workspace / NÖMAD Studio shell
 - Admin shell
-- Living MISNÖ Design System at `/design-system`
+- Living Style Guide at `/styleguide`
 - Product documentation in `/docs`
 - Netlify configuration and Identity widget shell
 
@@ -38,7 +38,7 @@ npm run preview
 - `/app`
 - `/workspace`
 - `/admin`
-- `/design-system`
+- `/styleguide`
 
 ## Important
 The UI is a Sprint 1 foundation. Authentication authorization, payments, data persistence, production moderation, and live video are intentionally not implemented yet.
