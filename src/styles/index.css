@@ -175,3 +175,77 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   .experience-card:hover { transform: none; }
 }
+
+@layer components {
+  .discover-page {
+    @apply mx-auto w-full max-w-6xl pb-20;
+  }
+
+  .discover-search {
+    @apply flex min-h-14 items-center gap-3 rounded-2xl border border-border bg-white px-4 shadow-sm transition-colors duration-200 focus-within:border-forest focus-within:ring-4 focus-within:ring-forest/10;
+  }
+
+  .discover-search input {
+    @apply min-w-0 flex-1 bg-transparent text-base text-ink outline-none placeholder:text-muted;
+  }
+
+  .discover-search button {
+    @apply inline-flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:bg-surface hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2;
+  }
+
+  .discover-location-button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-border bg-white px-4 text-sm font-medium text-ink transition-colors hover:border-ink hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2;
+  }
+
+  .discover-tabs {
+    @apply flex gap-7 overflow-x-auto;
+  }
+
+  .discover-tabs button {
+    @apply relative shrink-0 pb-4 text-sm font-medium text-muted transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-4;
+  }
+
+  .discover-tabs button::after {
+    content: '';
+    @apply absolute inset-x-0 bottom-0 h-0.5 origin-center scale-x-0 bg-ink transition-transform duration-200;
+  }
+
+  .discover-tabs button.is-active {
+    @apply text-ink;
+  }
+
+  .discover-tabs button.is-active::after {
+    @apply scale-x-100;
+  }
+
+  .category-filters {
+    @apply flex max-w-full gap-2 overflow-x-auto pb-1;
+  }
+
+  .category-filters button {
+    @apply shrink-0 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-muted transition-colors hover:border-ink hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2;
+  }
+
+  .category-filters button.is-active {
+    @apply border-ink bg-ink text-white;
+  }
+
+  .discover-detail-card {
+    @apply flex h-full flex-col p-7 transition duration-200 hover:-translate-y-1 hover:shadow-soft;
+  }
+
+  .discover-icon {
+    @apply inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-surface text-forest;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .discover-detail-card,
+  .discover-tabs button::after {
+    transition: none;
+  }
+
+  .discover-detail-card:hover {
+    transform: none;
+  }
+}

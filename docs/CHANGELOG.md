@@ -67,3 +67,10 @@
 - Added Container, Section, PageHeader, Divider, and IconButton primitives.
 - Added a stable UI component export path.
 - Added Design Kit documentation and expanded semantic CSS variables.
+
+## 1.0.0-alpha.8 — Discover
+
+- Rebuilt the Community Discover page around experiences, neighborhoods, circles, and people.
+- Added responsive search, category filters, accessible tabs, and empty states.
+- Added realistic MISNÖ demo content without stock photography.
+- Added reusable Discover cards and local-first community data.
