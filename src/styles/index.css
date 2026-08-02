@@ -138,7 +138,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   }
 
   .experience-card {
-    @apply group flex h-full flex-col;
+    @apply flex h-full flex-col;
     transition: transform var(--motion-standard) ease, box-shadow var(--motion-standard) ease;
   }
 
