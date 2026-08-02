@@ -1,23 +1,44 @@
-# MISNÖ Simple Netlify Build
+# MISNÖ Foundation
 
-A clean, white, Netlify-ready MISNÖ website and community app.
+A clean React + Vite + TypeScript foundation for the MISNÖ community platform.
 
-## Core product
+## Included
+- Shared design system and Tailwind tokens
+- Reusable components
+- Public website routes
+- Community app shell
+- Workspace / NÖMAD Studio shell
+- Admin shell
+- Living Style Guide at `/styleguide`
+- Product documentation in `/docs`
+- Netlify configuration and Identity widget shell
 
-- Public homepage with memberships
-- Netlify Identity modal authentication
-- Community app: Home, Discover, Circles, Experiences, Messages, Passport, Profile
-- NÖMAD Studio for Contributor, Partner, and Executive Partner memberships
-- Simple admin page protected by the `admin` Netlify Identity role
+## Run locally
+```bash
+npm install
+npm run dev
+```
 
-## Netlify deployment
+## Production build
+```bash
+npm run build
+npm run preview
+```
 
-1. Create or open a Netlify site.
-2. Connect this repository.
-3. Enable Netlify Identity in Project configuration.
-4. Use open registration while testing.
-5. Assign the `admin` role manually to administrator accounts.
+## Deploy to Netlify
+1. Push this repository to GitHub or import the folder into Replit.
+2. In Netlify, use build command `npm run build`.
+3. Use publish directory `dist`.
+4. Enable Netlify Identity if account registration is required.
+5. Set `VITE_ENABLE_IDENTITY=true` in Netlify environment variables.
 
-Build command: `npm run build`
+## Demo routes
+- `/` public homepage
+- `/memberships`
+- `/app`
+- `/workspace`
+- `/admin`
+- `/styleguide`
 
-Publish directory: `dist`
+## Important
+The UI is a Sprint 1 foundation. Authentication authorization, payments, data persistence, production moderation, and live video are intentionally not implemented yet.

@@ -1,0 +1,3 @@
+import { Card } from '../../components/Card';
+const resources=['Host Handbook','Event Planning Checklist','Community Safety Guide','Conversation Starters','Marketing Kit','Brand Assets'];
+export function ResourcesPage(){return <div><p className="eyebrow">Workspace</p><h1 className="page-title mt-3">Resources</h1><p className="mt-3 body-muted">Practical tools for creating safe, welcoming experiences.</p><div className="mt-8 grid gap-5 md:grid-cols-2">{resources.map(r=><Card className="p-6" key={r}><h2 className="text-lg font-semibold">{r}</h2><p className="mt-2 text-sm leading-6 text-muted">A clear, reusable resource for hosts. Placeholder content for Sprint 1.</p><button className="mt-5 text-sm font-semibold text-forest">Open resource</button></Card>)}</div></div>}

@@ -1,0 +1,6 @@
+import { Card } from '../../components/Card';
+import { ExperienceCard } from '../../components/ExperienceCard';
+import { MemberMark } from '../../components/MemberMark';
+import { experiences } from '../../lib/data';
+
+export function AppHomePage(){return <div className="mx-auto max-w-6xl"><p className="eyebrow">Home</p><h1 className="page-title mt-3">Good evening, <MemberMark name="Meaghan" membership="contributor" /></h1><p className="mt-3 body-muted">Here’s what’s happening tonight.</p><div className="mt-8 grid gap-5 md:grid-cols-3"><Card className="p-6"><p className="text-sm text-muted">Live now</p><h2 className="mt-3 text-lg font-semibold">Coffee & Conversation</h2><p className="mt-2 text-sm text-muted">18 people · Coffee Passport</p></Card><Card className="p-6"><p className="text-sm text-muted">Starting soon</p><h2 className="mt-3 text-lg font-semibold">Sunset Walk</h2><p className="mt-2 text-sm text-muted">6:30 PM · Mission Bay</p></Card><Card className="p-6"><p className="text-sm text-muted">New invitation</p><h2 className="mt-3 text-lg font-semibold">Book Journey</h2><p className="mt-2 text-sm text-muted">Emily invited you</p></Card></div><h2 className="mt-12 section-title">Upcoming experiences</h2><div className="mt-6 grid gap-5 md:grid-cols-3">{experiences.map(e=><ExperienceCard key={e.id} experience={e}/>)}</div></div>}

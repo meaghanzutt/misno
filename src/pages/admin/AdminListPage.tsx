@@ -1,0 +1,2 @@
+import { Card } from '../../components/Card';
+export function AdminListPage({title,items}:{title:string;items:string[]}){return <div><p className="eyebrow">Community Admin</p><h1 className="page-title mt-3">{title}</h1><Card className="mt-8 divide-y divide-border">{items.map((x,i)=><div className="flex items-center justify-between p-5" key={x}><div><p className="font-semibold">{x}</p><p className="mt-1 text-sm text-muted">Status: {i===0?'Needs review':'Active'}</p></div><button className="text-sm font-semibold text-forest">Open</button></div>)}</Card></div>}

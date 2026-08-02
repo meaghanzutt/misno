@@ -1,0 +1,4 @@
+import { Plus } from 'lucide-react';
+import { Card } from '../../components/Card';
+import { Button } from '../../components/Button';
+export function WorkspaceListPage({title,description,items}:{title:string;description:string;items:string[]}){return <div><div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="eyebrow">Workspace</p><h1 className="page-title mt-3">{title}</h1><p className="mt-3 body-muted">{description}</p></div><Button><Plus className="mr-2 h-4 w-4"/>Create</Button></div><div className="mt-8 divide-y divide-border rounded-card border border-border bg-white">{items.map((item,i)=><div key={item} className="flex items-center justify-between p-5"><div><p className="font-semibold">{item}</p><p className="mt-1 text-sm text-muted">{i===0?'Published':'Draft'} · Updated recently</p></div><button className="text-sm font-medium text-forest">Open</button></div>)}</div></div>}
