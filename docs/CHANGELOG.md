@@ -1,3 +1,8 @@
+## 1.0.0-alpha.12
+
+- Fixed Studio-002 routing by colocating the create experience page with the tracked Studio home module.
+- Removed the fragile missing-file import that caused Netlify TS2307 failures.
+
 ## 1.0.0-alpha.7
 
 - Removed homepage stock photography and external image dependencies.
