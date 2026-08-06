@@ -19,7 +19,7 @@ export function DraftCard({ draft }: { draft: StudioDraft }) {
         <div className="mb-2 flex items-center justify-between text-xs text-muted"><span>Draft progress</span><span>{draft.progress}%</span></div>
         <div className="h-1.5 overflow-hidden rounded-full bg-surface"><div className="h-full rounded-full bg-forest" style={{ width: `${draft.progress}%` }} /></div>
       </div>
-      <Link to="/workspace/experiences" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-ink hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-4">
+      <Link to={`/workspace/create?draft=${draft.id}`} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-ink hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-4">
         Continue editing <ArrowRight className="h-4 w-4" aria-hidden="true" />
       </Link>
     </Card>

@@ -84,3 +84,7 @@
 
 ## 1.0.0-alpha.10
 - Added Studio-001: NÖMAD Studio Workspace Home.
+
+## 1.0.0-alpha.11
+- Added Studio-002: four-step Experience creation flow.
+- Added browser-saved drafts, live member preview, validation, and publishing success state.

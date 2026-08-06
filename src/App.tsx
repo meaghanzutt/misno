@@ -15,6 +15,7 @@ import { MessagesPage } from './pages/app/MessagesPage';
 import { PassportPage } from './pages/app/PassportPage';
 import { ProfilePage } from './pages/app/ProfilePage';
 import { StudioHomePage } from './pages/workspace/StudioHomePage';
+import { CreateExperiencePage } from './pages/workspace/CreateExperiencePage';
 import { WorkspaceListPage } from './pages/workspace/WorkspaceListPage';
 import { ResourcesPage } from './pages/workspace/ResourcesPage';
 import { AdminDashboardPage } from './pages/admin/AdminDashboardPage';
@@ -35,6 +36,7 @@ export default function App(){return <Routes>
   </Route>
   <Route path="/workspace" element={<WorkspaceLayout/>}>
     <Route index element={<StudioHomePage/>}/>
+    <Route path="create" element={<CreateExperiencePage/>}/>
     <Route path="experiences" element={<WorkspaceListPage title="Experiences" description="Create a clear home for rooms, events, people, and shared progress." items={['Coffee Passport','Sunrise Club']}/>}/>
     <Route path="rooms" element={<WorkspaceListPage title="Rooms" description="Rooms support an Experience. They never float alone." items={['Coffee & Conversation','Book Journey Check-in']}/>}/>
     <Route path="events" element={<WorkspaceListPage title="Events" description="Plan the in-person and scheduled moments inside each Experience." items={['North Park Coffee Crawl','Mission Bay Sunrise Walk']}/>}/>

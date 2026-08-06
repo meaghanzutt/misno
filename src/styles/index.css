@@ -458,3 +458,42 @@ button, a { -webkit-tap-highlight-color: transparent; }
     transform: none;
   }
 }
+
+@layer components {
+  .experience-builder-page {
+    @apply mx-auto w-full max-w-6xl pb-24;
+  }
+
+  .builder-steps {
+    @apply mt-8 grid gap-2 border-b border-border pb-6 sm:grid-cols-4;
+  }
+
+  .builder-steps button {
+    @apply flex w-full items-center gap-3 rounded-xl px-3 py-3 text-left text-muted transition-colors hover:bg-surface disabled:cursor-not-allowed disabled:opacity-45;
+  }
+
+  .builder-steps li.is-current button {
+    @apply bg-surface text-ink;
+  }
+
+  .builder-steps li.is-complete button {
+    @apply text-forest;
+  }
+
+  .builder-step-number {
+    @apply inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border bg-white text-xs font-semibold;
+  }
+
+  .builder-steps li.is-current .builder-step-number,
+  .builder-steps li.is-complete .builder-step-number {
+    @apply border-forest bg-forest text-white;
+  }
+
+  .builder-steps strong {
+    @apply block text-sm font-semibold;
+  }
+
+  .builder-steps small {
+    @apply mt-0.5 hidden text-xs font-normal text-muted lg:block;
+  }
+}
