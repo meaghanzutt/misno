@@ -81,3 +81,6 @@
 - Added attended, hosted, upcoming, and community filters.
 - Added story summary cards without scores, points, or streaks.
 - Connected browser-saved joined Experiences to the Passport journey.
+
+## 1.0.0-alpha.10
+- Added Studio-001: NÖMAD Studio Workspace Home.
