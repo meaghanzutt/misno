@@ -323,3 +323,83 @@ button, a { -webkit-tap-highlight-color: transparent; }
     @apply fixed inset-x-0 bottom-16 z-30 border-t border-border bg-white/95 p-4 backdrop-blur lg:hidden;
   }
 }
+
+@layer components {
+  .passport-page {
+    @apply mx-auto w-full max-w-6xl pb-20;
+  }
+
+  .passport-header {
+    @apply flex flex-col gap-8 border-b border-border pb-10 lg:flex-row lg:items-end lg:justify-between;
+  }
+
+  .passport-summary {
+    @apply mt-8 grid overflow-hidden rounded-card border border-border bg-white shadow-soft sm:grid-cols-3;
+  }
+
+  .passport-summary-item {
+    @apply flex items-start gap-4 border-b border-border p-6 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0;
+  }
+
+  .passport-filter {
+    @apply mt-10 flex gap-2 overflow-x-auto pb-1;
+  }
+
+  .passport-filter button {
+    @apply shrink-0 rounded-full border border-border bg-white px-4 py-2 text-sm font-medium text-muted transition-colors hover:border-ink hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest focus-visible:ring-offset-2;
+  }
+
+  .passport-filter button.is-active {
+    @apply border-ink bg-ink text-white;
+  }
+
+  .passport-month-heading {
+    @apply flex items-end justify-between gap-4 border-b border-border pb-4;
+  }
+
+  .passport-month-heading h2 {
+    @apply text-2xl font-semibold tracking-[-0.035em] text-ink;
+  }
+
+  .passport-month-heading span {
+    @apply text-sm text-muted;
+  }
+
+  .passport-entry-card {
+    @apply flex gap-5 rounded-card border border-border bg-white p-6 shadow-soft transition duration-200 hover:-translate-y-0.5 hover:border-ink/20 hover:shadow-soft sm:p-7;
+  }
+
+  .passport-entry-icon {
+    @apply inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border;
+  }
+
+  .passport-entry-icon-attended {
+    @apply border-forest/20 bg-forest/10 text-forest;
+  }
+
+  .passport-entry-icon-hosted {
+    @apply border-ink/10 bg-ink text-white;
+  }
+
+  .passport-entry-icon-joined {
+    @apply border-border bg-surface text-forest;
+  }
+
+  .passport-entry-icon-community {
+    @apply border-border bg-white text-muted;
+  }
+
+  .passport-entry-type {
+    @apply rounded-full bg-surface px-2.5 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-muted;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .passport-entry-card {
+    transition: none;
+  }
+
+  .passport-entry-card:hover {
+    transform: none;
+  }
+}

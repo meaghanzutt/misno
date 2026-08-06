@@ -74,3 +74,10 @@
 - Added responsive search, category filters, accessible tabs, and empty states.
 - Added realistic MISNÖ demo content without stock photography.
 - Added reusable Discover cards and local-first community data.
+
+## 1.0.0-alpha.9 — Passport
+
+- Rebuilt Passport as a month-grouped record of meaningful participation.
+- Added attended, hosted, upcoming, and community filters.
+- Added story summary cards without scores, points, or streaks.
+- Connected browser-saved joined Experiences to the Passport journey.
